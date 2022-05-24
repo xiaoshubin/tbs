@@ -1,4 +1,4 @@
-# 腾讯TBS文件查看器
+# 腾讯TBS文件查看器[![](https://www.jitpack.io/v/xiaoshubin/tbs.svg)](https://www.jitpack.io/#xiaoshubin/tbs)
 
 - 应用内展示word、excel、pdf、ppt等文件
 
@@ -8,9 +8,8 @@ TBS Android SDK
 更新日期：2022-4-12
 说明：优化内核下载流程
 [TBS SDK 近期热点问题汇总](https://docs.qq.com/doc/DYW9QdXJNWFZnbVdz)
+
 ------
-
-
 
 ### 引入
 
@@ -27,6 +26,7 @@ allprojects {
 ```
 
 Step2 项目build.gradle加入
+
 ```
 implementation 'com.github.xiaoshubin:tbs:1.0.0'
 ```
@@ -64,3 +64,6 @@ override fun onDestroy() {
     tbsView?.onStop()
 }
 ```
+
+- 最后效果
+[pdf展示](https://github.com/xiaoshubin/tbs/tree/master/pic/pdf_test.png)
