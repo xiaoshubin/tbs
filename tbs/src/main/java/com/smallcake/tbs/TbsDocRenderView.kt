@@ -24,6 +24,7 @@ import java.io.File
  * 参考：https://github.com/ZhongXiaoHong/superFileView
  *
  * 注意：在页面关闭或pop关闭时需要调用onStop方法
+ * 注意：onViewInitFinished返回false需要重新开启下载TbsDownloader.startDownload(application)
  */
 @SuppressLint("UsingALog")
 class TbsDocRenderView: FrameLayout {

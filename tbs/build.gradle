@@ -17,6 +17,9 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+        ndk {
+            abiFilters "armeabi","arm64-v8a","armeabi-v7a"
+        }
     }
 
     buildTypes {
@@ -53,14 +56,14 @@ afterEvaluate {
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.4.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
-    implementation files('libs/tbs_v4.3.0.281_44181_20220407.jar')    //腾讯tbs
-    implementation 'com.squareup.okhttp3:okhttp:4.9.0'                //okhttp
+    implementation files('libs/tbs_v4.3.0.299_44199_20220615.jar')    //腾讯tbs
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'                //okhttp
     implementation 'com.github.JessYanCoding:ProgressManager:v1.5.0'  //进度监听
     implementation 'org.litepal.guolindev:core:3.2.3'                 //数据库
 }

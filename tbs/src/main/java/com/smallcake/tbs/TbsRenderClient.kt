@@ -4,6 +4,8 @@ import android.app.Application
 import android.util.Log
 import com.tencent.smtt.export.external.TbsCoreSettings
 import com.tencent.smtt.sdk.QbSdk
+import com.tencent.smtt.sdk.TbsDownloader
+import com.tencent.smtt.sdk.TbsListener
 import org.litepal.LitePal
 
 object TbsRenderClient {
@@ -22,6 +24,23 @@ object TbsRenderClient {
             }
             override fun onViewInitFinished(b: Boolean) {
                 Log.d("TabClient","视图初始化完成:$b")
+                if (!b) TbsDownloader.startDownload(application)
+            }
+        })
+        QbSdk.setTbsListener(object : TbsListener {
+            override fun onDownloadFinish(i: Int) {
+                //tbs内核下载完成回调
+                Log.d("TabClient","tbs内核下载完成回调：$i")
+            }
+
+            override fun onInstallFinish(i: Int) {
+                //内核安装完成回调，
+                Log.d("TabClient","tbs内核安装完成回调:$i")
+            }
+
+            override fun onDownloadProgress(i: Int) {
+                //下载进度监听
+                Log.d("TabClient","tbs下载进度监听:$i")
             }
         })
         //数据库初始化
